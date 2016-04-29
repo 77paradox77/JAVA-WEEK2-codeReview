@@ -25,6 +25,14 @@ public class Word {
     return mId;
   }
 
+  public static Word find(int id) {
+    try {
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
+  }
+
   public static void clear() {
     //This method is a built in method
     instances.clear();
